@@ -5,6 +5,12 @@
  */
 package domocore;
 
+import Entities.Piston;
+import Entities.Status;
+import Entities.Actuator;
+import Entities.PistonedDoor;
+import Entities.PistonedWindow;
+import Entities.OpenCloseElementByPiston;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

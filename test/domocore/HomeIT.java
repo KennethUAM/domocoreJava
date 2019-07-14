@@ -5,6 +5,10 @@
  */
 package domocore;
 
+import Entities.Status;
+import Entities.PistonedDoor;
+import Entities.Home;
+import Entities.PistonedWindow;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
