@@ -45,7 +45,7 @@ public class OpenCloseElementByPiston extends OpenCloseElement{
     }
     
     @Override
-    protected void activateActuator(Actuator actuator) {
+    public void activateActuator(Actuator actuator) {
         if(this.open)
             ((Piston)actuator).push(this.percentage);
         else
