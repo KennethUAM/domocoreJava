@@ -5,6 +5,8 @@
  */
 package domocore;
 
+import Entities.OpenCloseElementByPiston;
+
 /**
  *
  * @author Jheron Chacon

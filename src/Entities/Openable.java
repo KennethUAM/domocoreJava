@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domocore;
+package Entities;
 
 /**
  *
  * @author Jheron Chacon
  */
-public class PistonedDoor extends OpenCloseElementByPiston{
-    
-    public PistonedDoor(int id){
-        super(id);
-    }
-    
+public interface Openable {
+    public void open();
+    public void open(int percentage);
+    public void close();
+    public void close(int percentage);
 }
