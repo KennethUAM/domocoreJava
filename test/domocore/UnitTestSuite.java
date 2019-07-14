@@ -17,7 +17,12 @@ import org.junit.runners.Suite;
  * @author Jheron Chacon
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({domocore.OpenCloseElementByPistonIT.class, domocore.HomeIT.class})
+@Suite.SuiteClasses({
+    domocore.OpenCloseElementByPistonIT.class, 
+    domocore.HomeIT.class,
+    Entities.OpenCloseElementByLinedMotorIT.class,
+    Entities.OpenCloseElementByServoIT.class
+})
 public class UnitTestSuite {
 
     @BeforeClass

@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import Actuators.Actuator;
+
 /**
  *
  * @author Jheron Chacon
@@ -13,6 +15,7 @@ public abstract class OpenCloseElement implements Openable{
     protected int id;
     protected boolean open;
     protected int percentage;
+    Actuator actuator;
     
     @Override
     public void open(){

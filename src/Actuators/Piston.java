@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package Actuators;
 
 /**
  *
  * @author Jheron Chacon
  */
 public class Piston extends Actuator{
-    public int getPercentage(){return this.percentage;}
     public void push(int percentage){
         this.percentage = (this.percentage + percentage) < 100 ?
                 this.percentage + percentage : 100;

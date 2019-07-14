@@ -5,22 +5,21 @@
  */
 package Entities;
 
-import Actuators.Piston;
 import Actuators.Actuator;
+import Actuators.Servo;
 
 /**
  *
  * @author Jheron Chacon
  */
-public class OpenCloseElementByPiston extends OpenCloseElement{
-    
-    public OpenCloseElementByPiston(int id){
+public class OpenCloseElementByServo extends OpenCloseElement{
+    public OpenCloseElementByServo(int id){
         this.open = false;
         this.id = id;
-        this.actuator = new Piston();
+        this.actuator = new Servo();
     }
     
-    public int getPistonPercentage(){return ((Piston)this.actuator).getPercentage();}
+    public int getServoSteps(){return ((Servo)this.actuator).getSetps();}
     
     @Override
     public void open(){
@@ -42,6 +41,9 @@ public class OpenCloseElementByPiston extends OpenCloseElement{
     
     @Override
     public void close(int percentage){
+        if(percentage == ((Servo)this.actuator).getSetps()){
+            percentage = 100;
+        }
         super.close(percentage);
         this.activateActuator(this.actuator);
     }
@@ -49,9 +51,9 @@ public class OpenCloseElementByPiston extends OpenCloseElement{
     @Override
     public void activateActuator(Actuator actuator) {
         if(this.open)
-            ((Piston)actuator).push(this.percentage);
+            ((Servo)actuator).walkForward(this.percentage);
         else
-            ((Piston)actuator).pull(this.percentage);
-    }
+            ((Servo)actuator).walkTowards(this.percentage);
+    }   
     
 }
