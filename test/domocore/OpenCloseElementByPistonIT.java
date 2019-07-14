@@ -5,9 +5,9 @@
  */
 package domocore;
 
-import Entities.Piston;
+import Actuators.Piston;
 import Entities.Status;
-import Entities.Actuator;
+import Actuators.Actuator;
 import Entities.PistonedDoor;
 import Entities.PistonedWindow;
 import Entities.OpenCloseElementByPiston;

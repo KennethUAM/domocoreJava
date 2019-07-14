@@ -5,23 +5,22 @@
  */
 package Entities;
 
-import Actuators.Piston;
 import Actuators.Actuator;
+import Actuators.LinearMotor;
 
 /**
  *
  * @author Jheron Chacon
  */
-public class OpenCloseElementByPiston extends OpenCloseElement{
-    
-    public OpenCloseElementByPiston(int id){
+public class OpenCloseElementByLinedMotor extends OpenCloseElement{
+    public OpenCloseElementByLinedMotor(int id){
         this.open = false;
         this.id = id;
-        this.actuator = new Piston();
+        this.actuator = new LinearMotor();
     }
-    
-    public int getPistonPercentage(){return ((Piston)this.actuator).getPercentage();}
-    
+    public int getPosition(){
+        return this.actuator.getPercentage();
+    }
     @Override
     public void open(){
         super.open();
@@ -49,9 +48,8 @@ public class OpenCloseElementByPiston extends OpenCloseElement{
     @Override
     public void activateActuator(Actuator actuator) {
         if(this.open)
-            ((Piston)actuator).push(this.percentage);
+            ((LinearMotor)actuator).roteLeft();
         else
-            ((Piston)actuator).pull(this.percentage);
+            ((LinearMotor)actuator).roteRight();
     }
-    
 }
